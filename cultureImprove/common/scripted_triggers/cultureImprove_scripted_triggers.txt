@@ -67,4 +67,18 @@ NO_SEPARATISM_REMAIN_BOHEMIA = {
 
 
 }
-	
+ENSURE_TERRITORIAL_INTEGRIT = {
+	custom_trigger_tooltip = {
+		tooltip = ENSURE_TERRITORIAL_INTEGRIT_TOOLTIP
+			AND = {
+				owns_core_province = 267 
+				owns_core_province = 2968
+				owns_core_province = 265
+				owns_core_province = 2970 
+				owns_core_province = 266 
+				owns_core_province = 1771 
+				owns_core_province = 2967
+				owns_core_province = 4237
+			}		
+	}
+}	

@@ -189,6 +189,113 @@ country_decisions = {
 				factor = 1	
 		}
 	}
+	
+	true_germany_holly_roman_empire = {
+		major = no
+		potential = {
+			normal_or_historical_nations = yes
+			tag = BOH
+			
+			OR = {
+				267 = {
+					NOT = {culture_group = germanic}
+				}
+				2968 = {
+					NOT = {culture_group = germanic}
+				}
+				265 = {
+					NOT = {culture_group = germanic}
+				}
+				2970 = {
+					NOT = {culture_group = germanic}
+				}
+				266 = {
+					NOT = {culture_group = germanic}
+				}
+				1771 = {
+					NOT = {culture_group = germanic}
+				}
+				2967 = {
+					NOT = {culture_group = germanic}
+				}
+				4237 = {
+					NOT = {culture_group = germanic}
+				}
+			}
+			
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					tag = BOH
+					is_emperor = yes
+					NOT = {
+						dominant_culture = czech
+					}
+				}
+			}
+			primary_culture = czech
+		}
+		allow = {
+			is_at_war = no
+			adm_power = 100
+			is_emperor = yes
+			ENSURE_TERRITORIAL_INTEGRIT = yes
+		}
+		effect = {
+			bohemia_area = {
+				change_culture = sudeten_german
+			}
+			erzgebirge_area = {
+				change_culture = sudeten_german
+			}
+			change_primary_culture = sudeten_german
+			add_prestige = 20
+			add_adm_power = -100
+			
+		}
+		
+	}
+	
+	back_the_germany_family_as_emperor = {
+				major = no
+		potential = {
+			normal_or_historical_nations = yes
+			OR = { 	
+					tag = ENG
+					tag = GBR
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					is_emperor = yes
+					NOT = {
+					num_of_colonial_subjects = 1
+					}
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			adm_power = 100
+			is_emperor = yes
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					culture = english
+				}
+				change_culture = anglo_saxon
+			}
+			change_primary_culture = anglo_saxon
+			add_prestige = 20
+			add_adm_power = -100
+			
+		}
+		
+	}
+	
 	reclaim_the_Celtic_tradition = {
 			potential = {
 				culture_group = gaelic
@@ -198,9 +305,9 @@ country_decisions = {
 						TAG = GBR
 					}
 				}
-		}
-			allow = {
 				government_rank = 3 
+			}
+			allow = { 
 				culture_group = gaelic
 				is_subject = no
 				is_at_war = no
