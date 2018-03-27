@@ -1,0 +1,201 @@
+country_decisions = {
+	brittany_latinization = {
+		potential = {
+			tag = FRA
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { has_country_flag = brittany_latinization }
+		}
+		allow = {
+			CONTROL_THE_BRITTANY_REGION = yes
+			accepted_culture = breton
+			government_rank = 3
+			dip_power = 100
+			is_subject = no
+			is_at_war = no
+			OR = {
+				primary_culture = cosmopolitan_french
+				primary_culture = gascon
+				primary_culture = normand
+				primary_culture = aquitaine
+				primary_culture = burgundian
+				primary_culture = occitain
+				primary_culture = wallonian
+					}
+		}
+		effect = {
+			set_country_flag = brittany_latinization
+			add_prestige = 20
+			add_dip_power = -100
+			add_local_autonomy = 50
+			every_owned_province = {
+				limit = { 
+					culture = breton
+				}
+				change_culture = bretagne
+			}
+			hidden_effect = {
+			remove_accepted_culture = breton
+		}		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	germanisation_silesia = {
+		major = no
+		potential = {
+			normal_or_historical_nations = yes
+			OR = { 	
+					tag = GER
+					tag = PRU
+					tag = HAB
+			}
+			
+			OR = {
+				263 = {
+					NOT = {culture_group = germanic}
+				}
+				264 = {
+					NOT = {culture_group = germanic}
+				}
+				2966 = {
+					NOT = {culture_group = germanic}
+				}
+				4238 = {
+					NOT = {culture_group = germanic}
+				}
+			}
+			
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					OR = {
+						tag = GER
+						tag = PRU
+						tag = HAB
+					}
+					adm_tech = 20
+				}
+			}	
+		}
+		allow = {
+			is_subject = no
+			is_at_war = no
+			dip_power = 100
+			owns_core_province = 263 # Ratibor
+			owns_core_province = 264 # Breslau
+			owns_core_province = 2966 # Glogau
+			owns_core_province = 4238 # Leignit
+			NO_SEPARATISM_REMAIN_SILESIA = yes
+		}
+		effect = {
+			silesia_area = {
+				change_culture = german_silesian		
+				add_local_autonomy = 50
+			}
+			add_prestige = 20
+			add_dip_power = -100
+			#263 = {
+			#	spawn_rebels = {
+			#		size = 2
+			#		friend = SIL
+			#		}
+			#}
+			#264 = {
+			#	spawn_rebels = {
+			#		size = 3
+			#		friend = SIL
+			#		}
+			#}
+		}
+		ai_will_do = {
+				factor = 1	
+		}
+	}
+
+	germanisation_bohemia = {
+		major = no
+		potential = {
+			normal_or_historical_nations = yes
+			OR = { 	
+					tag = GER
+					tag = PRU
+					tag = HAB
+			}
+			
+			OR = {
+				267 = {
+					NOT = {culture_group = germanic}
+				}
+				2968 = {
+					NOT = {culture_group = germanic}
+				}
+				265 = {
+					NOT = {culture_group = germanic}
+				}
+				2970 = {
+					NOT = {culture_group = germanic}
+				}
+				266 = {
+					NOT = {culture_group = germanic}
+				}
+				1771 = {
+					NOT = {culture_group = germanic}
+				}
+				2967 = {
+					NOT = {culture_group = germanic}
+				}
+				4237 = {
+					NOT = {culture_group = germanic}
+				}
+			}
+			
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					tag = GER
+					tag = PRU
+					tag = HAB
+					adm_tech = 20
+				}
+			}	
+		}
+		allow = {
+			is_subject = no
+			is_at_war = no
+			dip_power = 100
+			owns_core_province = 267 
+			owns_core_province = 2968
+			owns_core_province = 265
+			owns_core_province = 2970 
+			owns_core_province = 266 
+			owns_core_province = 1771 
+			owns_core_province = 2967
+			owns_core_province = 4237
+			NO_SEPARATISM_REMAIN_BOHEMIA = yes
+		}
+		effect = {
+			bohemia_area = {
+				change_culture = sudeten_german
+				add_local_autonomy = 50
+			}
+			erzgebirge_area = {
+				change_culture = sudeten_german
+				add_local_autonomy = 50
+			}
+			add_prestige = 20
+			add_dip_power = -100
+		}
+		ai_will_do = {
+				factor = 1	
+		}
+	}
+}
+

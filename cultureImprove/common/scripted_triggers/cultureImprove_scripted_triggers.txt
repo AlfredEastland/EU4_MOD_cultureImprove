@@ -1,0 +1,70 @@
+CONTROL_THE_BRITTANY_REGION = {
+	custom_trigger_tooltip = {
+		tooltip = CONTROL_THE_BRITTANY_REGION_TOOLTIP
+			AND = {
+				controls = 171
+				controls = 172
+				controls = 169
+				controls = 170
+			}		
+	}
+}
+NO_SEPARATISM_REMAIN_SILESIA = {
+		custom_trigger_tooltip = {
+			tooltip = NO_SEPARATISM_REMAIN_SILESIA_TOOLTIP
+			NOT = {
+				AND = {
+					263 = {
+						nationalism = 1
+					}
+					264 = {
+						nationalism = 1
+					}
+					2966 = {
+						nationalism = 1
+					}
+					4238 = {
+						nationalism = 1
+					}
+				}
+			}
+		}
+}
+NO_SEPARATISM_REMAIN_BOHEMIA = {
+		custom_trigger_tooltip = {
+			tooltip = NO_SEPARATISM_REMAIN_BOHEMIA_TOOLTIP
+			NOT = {
+				AND = {
+					267 = {
+						nationalism = 1
+					}
+					2968 = {
+						nationalism = 1
+					}
+					265 = {
+						nationalism = 1
+					}
+					2970 = {
+						nationalism = 1
+					}
+					266 = {
+						nationalism = 1
+					}
+					1771 = {
+						nationalism = 1
+					}
+					2967 = {
+						nationalism = 1
+					}
+					4237 = {
+						nationalism = 1
+					}
+				}
+			}
+		}
+
+
+
+
+}
+	
