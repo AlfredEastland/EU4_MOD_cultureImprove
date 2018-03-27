@@ -250,7 +250,7 @@ country_decisions = {
 				change_culture = sudeten_german
 			}
 			change_primary_culture = sudeten_german
-			add_prestige = 20
+			add_imperial_influence = 10
 			add_adm_power = -100
 			
 		}
@@ -258,7 +258,7 @@ country_decisions = {
 	}
 	
 	back_the_germany_family_as_emperor = {
-				major = no
+		major = no
 		potential = {
 			normal_or_historical_nations = yes
 			OR = { 	
@@ -289,11 +289,9 @@ country_decisions = {
 				change_culture = anglo_saxon
 			}
 			change_primary_culture = anglo_saxon
-			add_prestige = 20
+			add_imperial_influence = 10
 			add_adm_power = -100
-			
-		}
-		
+		}		
 	}
 	
 	reclaim_the_Celtic_tradition = {
