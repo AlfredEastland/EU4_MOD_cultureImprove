@@ -195,7 +195,7 @@ country_decisions = {
 		potential = {
 			normal_or_historical_nations = yes
 			tag = BOH
-			
+			is_emperor = yes
 			OR = {
 				267 = {
 					NOT = {culture_group = germanic}
@@ -227,11 +227,8 @@ country_decisions = {
 				ai = no
 				AND = {
 					ai = yes
-					tag = BOH
-					is_emperor = yes
-					NOT = {
-						dominant_culture = czech
-					}
+					months_of_ruling = 120 
+					personality = ai_diplomat
 				}
 			}
 			primary_culture = czech
@@ -261,19 +258,25 @@ country_decisions = {
 		major = no
 		potential = {
 			normal_or_historical_nations = yes
+			is_emperor = yes
 			OR = { 	
 					tag = ENG
 					tag = GBR
 			}
-			OR = {
-				ai = no
-				AND = {
-					ai = yes
-					is_emperor = yes
-					NOT = {
-					num_of_colonial_subjects = 1
+			OR = { 	
+					ai = no
+					AND = {
+						ai = yes
+						OR = {
+							senior_union_with = FRA
+							AND = {
+								controls = 183
+								NOT = {
+									exists = FRA
+								}
+							}
+						}
 					}
-				}
 			}
 		}
 		allow = {
