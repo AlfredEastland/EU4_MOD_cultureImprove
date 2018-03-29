@@ -1,7 +1,10 @@
 ﻿l_english:
  brittany_latinization_title: "transfer Brittany culture to Francegroup"
- start_neokorean_desc: "test_text"
  CONTROL_THE_BRITTANY_REGION_TOOLTIP: "control the brittany region"
  NO_SEPARATISM_REMAIN_SILESIA_TOOLTIP: "No separatism remain in the sili region"
  NO_SEPARATISM_REMAIN_BOHEMIA_TOOLTIP: "No separatism remain in the Bohemia region"
  ENSURE_TERRITORIAL_INTEGRIT_TOOLTIP:"Ensure territorial integrity of Bohemia"
+ CONTROL_THE_POMMERANIAN_CULTURE_REGION_TOOLTIP:"control the pommeranian culture region"
+ CONTROL_RUSSIA_AND_BALKANS_REGION_TOOLTIP:"control or vassle east and south slavic culture region"
+ IS_EMPEROR_OF_CHINA_CONSIDER_DLC_tooltip:"IS EMPEROR OF CHINA CONSIDER DLC"
+ HAS_NUM_CHINESE_CULTURES_ACCEPTED_tooltip:"HAS CHINESE CULTURES ACCEPTED"

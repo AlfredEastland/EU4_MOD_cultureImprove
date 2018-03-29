@@ -13,7 +13,6 @@ country_decisions = {
 			CONTROL_THE_BRITTANY_REGION = yes
 			accepted_culture = breton
 			government_rank = 3
-			dip_power = 100
 			is_subject = no
 			is_at_war = no
 			culture_group = french
@@ -31,8 +30,15 @@ country_decisions = {
 			}
 			hidden_effect = {
 			remove_accepted_culture = breton
-		}		
-		}
+			every_owned_province = {
+			limit = { area = brittany_area }
+			spawn_rebels = {
+				type = separatists_rebels
+				size = 1
+			}
+			}
+			}
+			}		
 		ai_will_do = {
 			factor = 1
 		}
@@ -79,7 +85,6 @@ country_decisions = {
 		allow = {
 			is_subject = no
 			is_at_war = no
-			dip_power = 100
 			owns_core_province = 263 # Ratibor
 			owns_core_province = 264 # Breslau
 			owns_core_province = 2966 # Glogau
@@ -93,18 +98,18 @@ country_decisions = {
 			}
 			add_prestige = 20
 			add_dip_power = -100
-			#263 = {
-			#	spawn_rebels = {
-			#		size = 2
-			#		friend = SIL
-			#		}
-			#}
-			#264 = {
-			#	spawn_rebels = {
-			#		size = 3
-			#		friend = SIL
-			#		}
-			#}
+			hidden_effect = {
+				263 = {
+					spawn_rebels = {
+						size = 2
+						}
+				}
+				264 = {
+					spawn_rebels = {
+						size = 3
+						}
+				}
+			}
 		}
 		ai_will_do = {
 				factor = 1	
@@ -162,7 +167,6 @@ country_decisions = {
 		allow = {
 			is_subject = no
 			is_at_war = no
-			dip_power = 100
 			owns_core_province = 267 
 			owns_core_province = 2968
 			owns_core_province = 265
@@ -184,6 +188,17 @@ country_decisions = {
 			}
 			add_prestige = 20
 			add_dip_power = -100
+			hidden_effect = {
+				every_owned_province = {
+					limit = { 
+					area = bohemia_area					
+					}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 2
+					}
+				}
+			}
 		}
 		ai_will_do = {
 				factor = 1	
@@ -247,6 +262,8 @@ country_decisions = {
 				change_culture = sudeten_german
 			}
 			change_primary_culture = sudeten_german
+			set_ruler_culture = sudeten_german
+			set_heir_culture = sudeten_german
 			add_imperial_influence = 10
 			add_adm_power = -100
 			
@@ -270,7 +287,7 @@ country_decisions = {
 						OR = {
 							senior_union_with = FRA
 							AND = {
-								controls = 183
+								owns_core_province = 183
 								NOT = {
 									exists = FRA
 								}
@@ -292,6 +309,8 @@ country_decisions = {
 				change_culture = anglo_saxon
 			}
 			change_primary_culture = anglo_saxon
+			set_ruler_culture = anglo_saxon
+			set_heir_culture = anglo_saxon
 			add_imperial_influence = 10
 			add_adm_power = -100
 		}		
@@ -312,11 +331,10 @@ country_decisions = {
 				culture_group = gaelic
 				is_subject = no
 				is_at_war = no
-				dip_power = 100
 				AND = {
-				controls = 241
-				controls = 242
-				controls = 233
+				owns_core_province = 241
+				owns_core_province = 242
+				owns_core_province = 233
 			}	
 		}
 			effect = {
@@ -331,5 +349,844 @@ country_decisions = {
 		}
 	}
 	
+	retake_the_pommeranian_culture = {
+			potential = {
+				culture_group = west_slavic
+				is_emperor = no
+				government_rank = 2
+				OR = {
+					AND = {
+					owns_core_province = 2996
+					owns_core_province = 46
+					owns_core_province = 47
+					owns_core_province = 2993
+					owns_core_province = 2994
+					owns_core_province = 1858
+					owns_core_province = 48
+					owns_core_province = 2995
+					}
+					tag = POL
+					tag = PLC
+				}
+				NOT = { has_country_flag = pommeranian_culture }
+			}
+			allow = { 
+				culture_group = west_slavic
+				is_subject = no
+				is_at_war = no
+				CONTROL_THE_POMMERANIAN_CULTURE_REGION = yes	
+		}
+			effect = {
+				set_country_flag = pommeranian_culture
+				add_prestige = 20
+				add_dip_power = -100
+				
+				every_owned_province = {
+					limit = {
+						culture = pommeranian
+					}
+					change_culture = pmorze
+				}
+				hidden_effect = {
+					every_owned_province = {
+						limit = { 
+							culture = pmorze					
+						}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 1
+					}
+				}
+			}
+		}
+	}
+	
+	retake_the_kashubian_culture = {
+			potential = {
+				culture_group = west_slavic
+				is_emperor = no
+				government_rank = 2
+				OR = {
+					AND = {
+					owns_core_province = 1841
+					owns_core_province = 42
+					owns_core_province = 43
+					owns_core_province = 2997
+					}
+				tag = POL
+				tag = PLC
+				}
+				NOT = { has_country_flag = kashubian_culture }
+			}
+			allow = { 
+				culture_group = west_slavic
+				is_subject = no
+				is_at_war = no
+				AND = {
+					owns_core_province = 1841
+					owns_core_province = 42
+					owns_core_province = 43
+					owns_core_province = 2997
+			}	
+		}
+			effect = {
+				set_country_flag = kashubian_culture
+				add_prestige = 20
+				add_dip_power = -100
+				 43 = {
+						change_culture = kashubian
+					}
+				 1841 = {
+						change_culture = kashubian
+					}
+				42 = {
+						change_culture = kashubian
+					}
+				2997 = {
+						change_culture = kashubian
+					}
+				hidden_effect = {
+					every_owned_province = {
+						limit = { 
+							area = pomerelia_area						
+						}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 1
+					}
+				}
+			}
+				}
+		}
+		
+	retake_the_slovenska_culture = {
+			potential = {
+				culture_group = west_slavic
+				is_emperor = no
+				government_rank = 2
+				OR = {
+					AND = {
+					owns_core_province = 4236
+					owns_core_province = 1772
+					owns_core_province = 154
+					owns_core_province = 1318
+					owns_core_province = 162
+					}
+				tag = POL
+				tag = PLC
+				}
+				NOT = { has_country_flag = slovenska_culture }
+			}
+			allow = { 
+				culture_group = west_slavic
+				is_subject = no
+				is_at_war = no
+				AND = {
+					owns_core_province = 4236
+					owns_core_province = 1772
+					owns_core_province = 154
+					owns_core_province = 1318
+					owns_core_province = 162
+			}	
+		}
+			effect = {
+				set_country_flag = slovenska_culture
+				add_prestige = 20
+				add_dip_power = -100
+				 4236 = {
+						change_culture = slovenska
+					}
+				 1772 = {
+						change_culture = slovenska
+					}
+				154 = {
+						change_culture = slovenska
+					}
+				1318 = {
+						change_culture = slovenska
+					}
+				162 = {
+						change_culture = slovenska
+					}
+				hidden_effect = {
+					every_owned_province = {
+						limit = { 
+							culture = slovenska						
+						}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 1
+					}
+				}
+			}
+				}
+		}
+	
+	take_orthodox_slavic = {
+		potential = {
+			OR = {
+				culture_group = east_slavic
+				culture_group = south_slavic
+			}
+				is_emperor = no
+				religion = orthodox
+			OR = {
+				tag = SER
+				tag = RUS
+			}
+				NOT = { has_country_flag = orthodox_slavic }
+		}
+		allow = { 
+			OR = {
+				culture_group = east_slavic
+				culture_group = south_slavic
+			}
+			dominant_religion = orthodox
+			government_rank = 3
+			is_subject = no
+			is_at_war = no
+			CONTROL_RUSSIA_AND_BALKANS_REGION = yes
+			owns_core_province = 151
+		}
+		effect = {
+				set_country_flag = orthodox_slavic
+				add_prestige = 20
+				change_primary_culture = orthodox_slavic
+				set_ruler_culture = orthodox_slavic
+				set_heir_culture = orthodox_slavic
+				every_owned_province = {
+					limit = {
+						culture = russian
+					}
+					change_culture = russian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = novgorodian
+					}
+					change_culture = novgorodian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = ryazanian
+					}
+					change_culture = ryazanian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = byelorussian
+					}
+					change_culture = byelorussian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = ruthenian
+					}
+					change_culture = ruthenian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = karelian
+					}
+					change_culture = karelian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = croatian
+					}
+					change_culture = croatian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = serbian
+					}
+					change_culture = serbian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = bulgarian
+					}
+					change_culture = bulgarian_slavic
+				}
+				every_owned_province = {
+					limit = {
+						culture = albanian
+					}
+					change_culture = albanian_slavic
+				}	
+			}
+	}
+
+	neokorean_emperor = {
+		major = yes
+		potential = {
+			tag = KOR
+			NOT  = {
+				has_global_flag = flag_neokorean_emperor
+			}
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			HAS_NUM_CHINESE_CULTURES_ACCEPTED = { NUM=2 }
+			dip_power = 200
+			primary_culture = korean
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = { 
+					culture = korean
+				}
+				change_culture = neokorean
+			}
+			change_primary_culture = neokorean
+			set_ruler_culture = neokorean
+			set_heir_culture = neokorean
+			set_global_flag = flag_neokorean_emperor
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	neovietnamese_emperor = {
+		major = yes
+		potential = {
+			tag = DAI
+			NOT  = {
+				has_global_flag = flag_neovietnamese_emperor
+			}
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			HAS_NUM_CHINESE_CULTURES_ACCEPTED = { NUM=2 }
+			dip_power = 200
+			primary_culture = vietnamese
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = { 
+					culture = vietnamese
+				}
+				change_culture = neovietnamese
+			}
+			change_primary_culture = neovietnamese
+			set_ruler_culture = neovietnamese
+			set_heir_culture = neovietnamese
+			set_global_flag = flag_neovietnamese_emperor
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	neojapanese_emperor = {
+		major = yes
+		potential = {
+			tag = JAP
+			NOT  = {
+				has_global_flag = flag_neojapanese_emperor
+			}
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			HAS_NUM_CHINESE_CULTURES_ACCEPTED = { NUM=2 }
+			dip_power = 200
+			OR = {
+				primary_culture = togoku
+				primary_culture = japanese
+				primary_culture = kyushuan
+					}
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = togoku
+						culture = japanese
+						culture = kyushuan
+					}
+				}
+				change_culture = neojapanese
+			}
+			change_primary_culture = neojapanese
+			set_ruler_culture = neojapanese
+			set_heir_culture = neojapanese
+			set_global_flag = flag_neojapanese_emperor
+		}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	
+	neomanchu_emperor = {
+		major = yes
+		potential = {
+			OR = {
+				tag = MCH
+				tag = QNG
+			}
+			NOT  = {
+				has_global_flag = flag_neomanchu_emperor
+			}
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			tag = QNG
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			HAS_NUM_CHINESE_CULTURES_ACCEPTED = { NUM=2 }
+			dip_power = 200
+			primary_culture = manchu
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = { 
+					culture = manchu
+				}
+				change_culture = neomanchu
+			}
+			change_primary_culture = neomanchu
+			set_ruler_culture = neomanchu
+			set_heir_culture = neomanchu
+			set_global_flag = flag_neomanchu_emperor
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+		
+	neomongol_emperor = {
+		major = yes
+		potential = {
+			tag = YUA
+			NOT  = {
+				has_global_flag = flag_neomongol_emperor
+			}
+			OR = {
+				# primary culture is any of the Altaic group
+				primary_culture = mongol
+				primary_culture = chahar
+				primary_culture = khalkha
+				primary_culture = oirats
+				primary_culture = uzbehk
+				primary_culture = turkmeni
+				primary_culture = uyghur
+				primary_culture = khazak
+				primary_culture = kirgiz
+			}
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			HAS_NUM_CHINESE_CULTURES_ACCEPTED = { NUM=2 }
+			dip_power = 200
+			OR = {
+				# primary culture is one of the Mongolian Altaic cultures, you should own them to form Yuan.
+				primary_culture = mongol
+				primary_culture = chahar
+				primary_culture = khalkha
+				primary_culture = oirats
+				primary_culture = uyghur
+			}
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = mongol
+						culture = chahar
+						culture = khalkha
+						culture = oirats
+						culture = uyghur
+					}
+				}
+				change_culture = neomongol
+			}
+			change_primary_culture = neomongol
+			set_ruler_culture = neomongol
+			set_heir_culture = neomongol
+			set_global_flag = flag_neomongol_emperor
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	neotibetan_emperor = {
+		major = yes
+		potential = {
+			tag = TIB
+			NOT  = {
+				has_global_flag = flag_neotibetan_emperor
+			}
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			HAS_NUM_CHINESE_CULTURES_ACCEPTED = { NUM=2 }
+			dip_power = 200
+			primary_culture = tibetan
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = { 
+					culture = tibetan
+				}
+				change_culture = neotibetan
+			}
+			change_primary_culture = neotibetan
+			set_ruler_culture = neotibetan
+			set_heir_culture = neotibetan
+			set_global_flag = flag_neotibetan_emperor
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reorganize_tibet_people = {
+		major = no
+		potential = {
+			culture_group = east_asian
+			NOT  = {
+				has_global_flag = flag_reorganize_tibet_people
+			}
+			religion = confucianism
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			culture_group = east_asian
+			religion = confucianism
+			kham_area = {
+				type = all
+				owned_by = ROOT
+			}
+			tsang_area = {
+				type = all
+				owned_by = ROOT
+			}
+			utsang_area = {
+				type = all
+				owned_by = ROOT
+			}
+			amdo_area = {
+				type = all
+				owned_by = ROOT
+			}
+			OR = {
+			has_matching_religion = vajrayana
+			humanist_ideas = 3
+			}
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = { 
+					culture = tibetan
+				}
+				change_culture = neotibetan
+			}
+			706 = {
+				change_culture = neotibetan
+			}
+			4204 = {
+				change_culture = neotibetan
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { 
+					culture = neotibetan					
+					}
+					spawn_rebels = {
+						type = vajrayana_rebels
+						size = 1
+					}
+				}
+			}
+			set_global_flag = flag_reorganize_tibet_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reorganize_korea_people = {
+		major = no
+		potential = {
+			culture_group = east_asian
+			NOT  = {
+				has_global_flag = flag_reorganize_korea_people
+			}
+			religion = confucianism
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			culture_group = east_asian
+			religion = confucianism
+			humanist_ideas = 5
+			korea_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = { 
+					culture = korean
+				}
+				change_culture = neokorean
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { 
+					culture = neokorean					
+					}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 1
+					}
+				}
+			}
+			set_global_flag = flag_reorganize_korea_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reorganize_vietnam_people = {
+		major = no
+		potential = {
+			culture_group = east_asian
+			NOT  = {
+				has_global_flag = flag_reorganize_vietnam_people
+			}
+			religion = confucianism
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			culture_group = east_asian
+			religion = confucianism
+			OR = {
+				has_matching_religion = mahayana
+				humanist_ideas = 5
+			}
+			owns_core_province = 613	
+			owns_core_province = 2372	
+			tonkin_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = { 
+					culture = vietnamese
+				}
+				change_culture = neovietnamese
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { 
+					culture = neovietnamese					
+					}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 1
+					}
+				}
+			}
+			set_global_flag = flag_reorganize_vietnam_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reorganize_westprotectorate_people = {
+		major = no
+		potential = {
+			culture_group = east_asian
+			NOT  = {
+				has_global_flag = flag_reorganize_westprotectorate_people
+			}
+			religion = confucianism
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			culture_group = east_asian
+			religion = confucianism
+			AND = {
+					has_matching_religion = animism
+					has_matching_religion = sunni
+			}
+			west_gansu_area = {
+				type = all
+				owned_by = ROOT
+			}
+			turpan_kumul_area = {
+				type = all
+				owned_by = ROOT
+			}
+			shanshan_area = {
+				type = all
+				owned_by = ROOT
+			}
+			zungaria_area = {
+				type = all
+				owned_by = ROOT
+			}
+			 tarim_basin_area = {
+				type = all
+				owned_by = ROOT
+			}
+			kashgaria_area = {
+				type = all
+				owned_by = ROOT
+			}
+			jetysuu_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			west_gansu_area = {
+				type = all
+				change_culture = neoxinjiang
+			}
+			turpan_kumul_area = {
+				type = all
+				change_culture = neoxinjiang
+			}
+			shanshan_area = {
+				type = all
+				change_culture = neoxinjiang
+			}
+			zungaria_area = {
+				type = all
+				change_culture = neoxinjiang
+			}
+			tarim_basin_area = {
+				type = all
+				change_culture = neoxinjiang
+			}
+			altishahr_area = {
+				type = all
+				change_culture = neoxinjiang
+			}
+			kashgaria_area = {
+				type = all
+				change_culture = neoxinjiang
+			}
+			jetysuu_area = {
+				type = all
+				change_culture = neoxinjiang
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { 
+					culture = neoxinjiang					
+					}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 1
+					}
+				}
+			}
+			set_global_flag = flag_reorganize_westprotectorate_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reorganize_manzhou_people = {
+		major = no
+		potential = {
+			culture_group = east_asian
+			NOT  = {
+				has_global_flag = flag_reorganize_manzhou_people
+			}
+			religion = confucianism
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			culture_group = east_asian
+			religion = confucianism
+			OR = {
+				has_matching_religion = animism
+				humanist_ideas = 7
+			}	
+			manchuria_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			every_owned_province = {
+				limit = { 
+					culture = manchu
+				}
+				change_culture = neomanchu
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { 
+					culture = neomanchu					
+					}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 1
+					}
+				}
+			}
+			set_global_flag = flag_reorganize_manzhou_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 }
+
 

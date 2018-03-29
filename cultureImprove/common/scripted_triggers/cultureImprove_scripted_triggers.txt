@@ -2,13 +2,14 @@ CONTROL_THE_BRITTANY_REGION = {
 	custom_trigger_tooltip = {
 		tooltip = CONTROL_THE_BRITTANY_REGION_TOOLTIP
 			AND = {
-				controls = 171
-				controls = 172
-				controls = 169
-				controls = 170
+				owns_core_province = 171
+				owns_core_province = 172
+				owns_core_province = 169
+				owns_core_province = 170
 			}		
 	}
 }
+
 NO_SEPARATISM_REMAIN_SILESIA = {
 		custom_trigger_tooltip = {
 			tooltip = NO_SEPARATISM_REMAIN_SILESIA_TOOLTIP
@@ -30,6 +31,7 @@ NO_SEPARATISM_REMAIN_SILESIA = {
 			}
 		}
 }
+
 NO_SEPARATISM_REMAIN_BOHEMIA = {
 		custom_trigger_tooltip = {
 			tooltip = NO_SEPARATISM_REMAIN_BOHEMIA_TOOLTIP
@@ -67,6 +69,7 @@ NO_SEPARATISM_REMAIN_BOHEMIA = {
 
 
 }
+
 ENSURE_TERRITORIAL_INTEGRIT = {
 	custom_trigger_tooltip = {
 		tooltip = ENSURE_TERRITORIAL_INTEGRIT_TOOLTIP
@@ -82,3 +85,138 @@ ENSURE_TERRITORIAL_INTEGRIT = {
 			}		
 	}
 }	
+
+CONTROL_THE_POMMERANIAN_CULTURE_REGION = {
+	custom_trigger_tooltip = {
+		tooltip = CONTROL_THE_POMMERANIAN_CULTURE_REGION_TOOLTIP
+			AND = {
+				owns_core_province = 2996
+				owns_core_province = 46
+				owns_core_province = 47
+				owns_core_province = 2993
+				owns_core_province = 2994
+				owns_core_province = 1858
+				owns_core_province = 48
+				owns_core_province = 2995
+			}		
+	}
+}
+
+CONTROL_RUSSIA_AND_BALKANS_REGION = {
+	custom_trigger_tooltip = {
+		tooltip = CONTROL_RUSSIA_AND_BALKANS_REGION_TOOLTIP
+			NOT = {
+					any_province = {
+						culture = russian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = ruthenian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = ryazanian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = byelorussian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = novgorodian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = croatian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = serbian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = novgorodian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = karelian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			NOT = {
+					any_province = {
+						culture = albanian
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}}		
+	}
+
+IS_EMPEROR_OF_CHINA_CONSIDER_DLC = {
+	custom_trigger_tooltip = {
+		tooltip = IS_EMPEROR_OF_CHINA_CONSIDER_DLC_tooltip
+		OR = {
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+			}
+			AND = {
+				NOT = {has_dlc = "Mandate of Heaven" }
+				OR = {
+					AND = {
+							has_dlc = "Common Sense"
+							government_rank = 3
+					}
+					AND = {
+							NOT = { has_dlc = "Common Sense" }
+							total_development = 1000
+					}
+				}
+			}
+		}
+	}
+}
+
+HAS_NUM_CHINESE_CULTURES_ACCEPTED = {
+	custom_trigger_tooltip = {
+		tooltip = HAS_NUM_CHINESE_CULTURES_ACCEPTED_tooltip
+		calc_true_if = {
+			accepted_culture = chihan
+			accepted_culture = miao
+			accepted_culture = cantonese
+			accepted_culture = jin
+			accepted_culture = wu
+			accepted_culture = chimin
+			accepted_culture = hakka
+			accepted_culture = gan
+			accepted_culture = xiang
+			accepted_culture = sichuanese
+			accepted_culture = jianghuai
+			accepted_culture = xibei
+			accepted_culture = hubei
+			accepted_culture = zhongyuan
+			accepted_culture = shandong_culture
+			accepted_culture = neokorean
+			accepted_culture = neojapanese
+			accepted_culture = neovietnamese
+			accepted_culture = neomanchu
+			accepted_culture = neomongol
+			amount = $NUM$
+		}
+	}
+}

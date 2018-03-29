@@ -90,7 +90,9 @@ country_event = {
 		name = "purple_phoenix.3.a"
 		add_prestige = 10
 		add_dip_power = 50
-		316 = { change_province_name = Optimatoi rename_capital = Nikomedia }
+		316 = { change_province_name = Optimatoi 
+		rename_capital = Nikomedia 
+		}
 	}
 }
 
