@@ -12,9 +12,9 @@ country_decisions = {
 		allow = {
 			CONTROL_THE_BRITTANY_REGION = yes
 			accepted_culture = breton
-			government_rank = 3
 			is_subject = no
 			is_at_war = no
+			government_rank = 3
 			culture_group = french
 		}
 		effect = {
@@ -1181,6 +1181,80 @@ country_decisions = {
 				}
 			}
 			set_global_flag = flag_reorganize_manzhou_people
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reorganize_yunnan_people = {
+		major = no
+		potential = {
+			culture_group = east_asian
+			NOT  = {
+				has_global_flag = flag_reorganize_yunnan_people
+			}
+			religion = confucianism
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+		}
+		allow = {
+			IS_EMPEROR_OF_CHINA_CONSIDER_DLC = yes
+			culture_group = east_asian
+			religion = confucianism
+			OR = {
+				has_matching_religion = animism
+				humanist_ideas = 3
+			}	
+			yun_gui_borderland_area = {
+				type = all
+				owned_by = ROOT
+			}
+			yun_gui_area = {
+				type = all
+				owned_by = ROOT
+			}
+			guangxi_area = {
+				type = all
+				owned_by = ROOT
+			}
+			chuannan_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_meritocracy = 10
+			add_legitimacy = 10
+			add_prestige = 20
+			guangxi_area = {
+				type = all
+				change_culture = yuexi
+			}
+			chuannan_area = {
+				type = all
+				change_culture = sichuanese
+			}
+			yun_gui_area = {
+				type = all
+				change_culture = dian
+			}
+			yun_gui_borderland_area = {
+				type = all
+				change_culture = dian
+			}
+			
+			hidden_effect = {
+				every_owned_province = {
+					limit = { 
+					culture = dian					
+					}
+					spawn_rebels = {
+						type = separatists_rebels
+						size = 1
+					}
+				}
+			}
+			set_global_flag = flag_reorganize_yunnan_people
 		}
 		ai_will_do = {
 			factor = 1

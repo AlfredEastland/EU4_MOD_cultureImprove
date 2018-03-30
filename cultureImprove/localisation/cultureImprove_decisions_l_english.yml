@@ -1,10 +1,74 @@
 ﻿l_english:
  brittany_latinization_title: "transfer Brittany culture to Francegroup"
+ brittany_latinization_desc:""
  CONTROL_THE_BRITTANY_REGION_TOOLTIP: "control the brittany region"
+ 
+ germanisation_silesia_title:"test"
+ germanisation_silesia_desc:"test"
  NO_SEPARATISM_REMAIN_SILESIA_TOOLTIP: "No separatism remain in the sili region"
+ 
+ germanisation_bohemia_title:"germanisation_bohemia_title"
+ germanisation_bohemia_desc:"germanisation_bohemia_title"
  NO_SEPARATISM_REMAIN_BOHEMIA_TOOLTIP: "No separatism remain in the Bohemia region"
+ 
+ true_germany_holly_roman_empire_title:"true_germany_holly_roman_empire_title"
+ true_germany_holly_roman_empire_desc:"true_germany_holly_roman_empire_title"
  ENSURE_TERRITORIAL_INTEGRIT_TOOLTIP:"Ensure territorial integrity of Bohemia"
+ 
+ back_the_germany_family_as_emperor:"back_the_germany_family_as_emperor"
+ back_the_germany_family_as_emperor:"back_the_germany_family_as_emperor"
+ 
+ reclaim_the_Celtic_tradition_title:"reclaim_the_Celtic_tradition"
+ reclaim_the_Celtic_tradition_desc:"reclaim_the_Celtic_tradition"
  CONTROL_THE_POMMERANIAN_CULTURE_REGION_TOOLTIP:"control the pommeranian culture region"
+ 
+ retake_the_kashubian_culture_title:"retake_the_kashubian_culture"
+ retake_the_kashubian_culture_desc:"retake_the_kashubian_culture"
+ 
+ retake_the_slovenska_culture_title:"retake_the_slovenska_culture"
+ retake_the_slovenska_culture_desc:"retake_the_slovenska_culture"
+ 
+ take_orthodox_slavic_title:"take_orthodox_slavic"
+ take_orthodox_slavic_desc:"take_orthodox_slavic"
  CONTROL_RUSSIA_AND_BALKANS_REGION_TOOLTIP:"control or vassle east and south slavic culture region"
+ 
+ neokorean_emperor_title:"neokorean_emperor"
+ neokorean_emperor_desc:"neokorean_emperor"
+
+ neovietnamese_emperor_title:"neovietnamese_emperor"
+ neovietnamese_emperor_desc:"neovietnamese_emperor"
+ 
+ neojapanese_emperor_title:"neojapanese_emperor"
+ neojapanese_emperor_desc:"neojapanese_emperor"
+ 
+ neomanchu_emperor_title:"neomanchu_emperor"
+ neomanchu_emperor_desc:"neomanchu_emperor"
+ 
+ neomongol_emperor_title:"neomongol_emperor"
+ neomongol_emperor_desc:"neomongol_emperor"
+
+ neotibetan_emperor_title:"neotibetan_emperor"
+ neotibetan_emperor_desc:"neotibetan_emperor"
+
+ reorganize_tibet_people_title:"reorganize_tibet_people"
+ reorganize_tibet_people_desc:"reorganize_tibet_people"
+
+ reorganize_korea_people_title:"reorganize_korea_people"
+ reorganize_korea_people_desc:"reorganize_korea_people"
+
+ reorganize_vietnam_people_title:"reorganize_vietnam_people"
+ reorganize_vietnam_people_desc:"reorganize_vietnam_people"
+
+ reorganize_westprotectorate_people_title:"reorganize_westprotectorate_people"
+ reorganize_westprotectorate_people_desc:"reorganize_westprotectorate_people"
+
+ reorganize_manzhou_people_title:"reorganize_manzhou_people"
+ reorganize_manzhou_people_desc:"reorganize_manzhou_people"
+
+ reorganize_yunnan_people_title:"reorganize_yunnan_people"
+ reorganize_yunnan_people_desc:"reorganize_yunnan_people"
+
+ 
+ 
  IS_EMPEROR_OF_CHINA_CONSIDER_DLC_tooltip:"IS EMPEROR OF CHINA CONSIDER DLC"
  HAS_NUM_CHINESE_CULTURES_ACCEPTED_tooltip:"HAS CHINESE CULTURES ACCEPTED"

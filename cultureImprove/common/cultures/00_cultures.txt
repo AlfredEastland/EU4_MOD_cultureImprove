@@ -5611,7 +5611,10 @@ east_asian = {	# Chinese Group
 	}
 	neoxinjiang = {
 	}
-	
+	yuexi = {
+	}
+	dian = {
+	}
 	dynasty_names = {
 		Zhu Wu Geng Shang Zheng Zhao Li Shi Liu Guo Yang Wang Qian Ma Meng Gao 
 		Chen Sun Sima Cao Xiao Qi Zu Zhou Huang Bai Qiu Tang Lu	Xu Chang 
