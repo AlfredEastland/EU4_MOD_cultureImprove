@@ -28,6 +28,7 @@ country_decisions = {
 				}
 				change_culture = bretagne
 			}
+			custom_tooltip = notice_1
 			hidden_effect = {
 			remove_accepted_culture = breton
 			every_owned_province = {
@@ -52,6 +53,7 @@ country_decisions = {
 					tag = GER
 					tag = PRU
 					tag = HAB
+					is_emperor = yes
 			}
 			
 			OR = {
@@ -124,6 +126,7 @@ country_decisions = {
 					tag = GER
 					tag = PRU
 					tag = HAB
+					is_emperor = yes
 			}
 			
 			OR = {
@@ -195,7 +198,7 @@ country_decisions = {
 					}
 					spawn_rebels = {
 						type = separatists_rebels
-						size = 2
+						size = 1
 					}
 				}
 			}
